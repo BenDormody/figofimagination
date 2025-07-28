@@ -1,0 +1,430 @@
+/* ===== CATALOGUE PAGE SPECIFIC STYLES ===== */
+
+/* Catalogue Header */
+.catalogue-header {
+  background: var(--primary-background);
+  color: var(--neutral-black);
+  padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+  position: relative;
+  border-bottom: 1px solid var(--neutral-light-gray);
+}
+
+.catalogue-intro {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.catalogue-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-md);
+  color: var(--neutral-black);
+}
+
+.catalogue-subtitle {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--neutral-medium-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Catalogue Controls */
+.catalogue-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--spacing-lg) 0 var(--spacing-lg);
+  border: 1px solid var(--neutral-light-gray);
+  border-radius: var(--border-radius-lg);
+  background: var(--primary-surface);
+  color: var(--neutral-black);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+}
+
+.search-input::placeholder {
+  color: var(--neutral-medium-gray);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--neutral-black);
+  background: var(--neutral-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.clear-search {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--neutral-medium-gray);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+  display: none;
+}
+
+.clear-search:hover {
+  color: var(--neutral-black);
+  background: var(--primary-surface);
+}
+
+.clear-search.visible {
+  display: block;
+}
+
+.filter-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  flex: 1;
+  min-width: 200px;
+  height: 48px;
+  padding: 0 var(--spacing-md);
+  border: 1px solid var(--neutral-light-gray);
+  border-radius: var(--border-radius-lg);
+  background: var(--primary-surface);
+  color: var(--neutral-black);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--neutral-black);
+  background: var(--neutral-white);
+}
+
+.filter-select option {
+  background: var(--neutral-white);
+  color: var(--neutral-black);
+}
+
+/* Results Summary */
+.results-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--neutral-light-gray);
+}
+
+.results-count {
+  color: var(--neutral-medium-gray);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Poems Table Section */
+.poems-table-section {
+  background-color: var(--primary-surface);
+  padding: var(--spacing-2xl) 0;
+}
+
+.table-container {
+  background: var(--neutral-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  border: 1px solid var(--neutral-light-gray);
+}
+
+.poems-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.table-header {
+  background: var(--primary-surface);
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-black);
+  border-bottom: 1px solid var(--neutral-light-gray);
+  position: relative;
+}
+
+.sort-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transition: color var(--transition-fast);
+  width: 100%;
+  text-align: left;
+}
+
+.sort-button:hover {
+  color: var(--neutral-medium-gray);
+}
+
+.sort-icon {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  transition: opacity var(--transition-fast);
+}
+
+.sort-button:hover .sort-icon {
+  opacity: 1;
+}
+
+.sort-button.active .sort-icon {
+  opacity: 1;
+  color: var(--neutral-black);
+}
+
+.sort-button.asc .sort-icon::after {
+  content: "↑";
+}
+
+.sort-button.desc .sort-icon::after {
+  content: "↓";
+}
+
+.poems-table tbody tr {
+  border-bottom: 1px solid var(--neutral-light-gray);
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.poems-table tbody tr:hover {
+  background-color: var(--primary-surface);
+}
+
+.poems-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.poems-table td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  vertical-align: middle;
+}
+
+.poem-title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-black);
+  transition: color var(--transition-fast);
+}
+
+.poems-table tbody tr:hover .poem-title {
+  color: var(--neutral-medium-gray);
+}
+
+.poem-date {
+  color: var(--neutral-dark-gray);
+  font-size: var(--font-size-sm);
+}
+
+.poem-collection {
+  color: var(--neutral-medium-gray);
+  font-size: var(--font-size-sm);
+}
+
+.poem-collection-badge {
+  background-color: var(--primary-surface);
+  color: var(--neutral-dark-gray);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.no-collection {
+  color: var(--neutral-medium-gray);
+  font-style: italic;
+  font-size: var(--font-size-sm);
+}
+
+/* Loading state for table */
+.loading-row td {
+  padding: var(--spacing-xl);
+}
+
+.loading-row .loading-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.loading-row .skeleton-line {
+  height: 16px;
+  background: linear-gradient(
+    90deg,
+    var(--neutral-light-gray) 25%,
+    var(--primary-surface) 50%,
+    var(--neutral-light-gray) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--border-radius-sm);
+}
+
+.loading-row .skeleton-line:nth-child(1) {
+  width: 60%;
+}
+.loading-row .skeleton-line:nth-child(2) {
+  width: 40%;
+}
+.loading-row .skeleton-line:nth-child(3) {
+  width: 50%;
+}
+.loading-row .skeleton-line:nth-child(4) {
+  width: 70%;
+}
+.loading-row .skeleton-line:nth-child(5) {
+  width: 45%;
+}
+.loading-row .skeleton-line:nth-child(6) {
+  width: 55%;
+}
+
+/* No Results Section */
+.no-results-section {
+  background-color: var(--primary-surface);
+  text-align: center;
+  padding: var(--spacing-4xl) 0;
+}
+
+.no-results-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.no-results-title {
+  font-size: var(--font-size-2xl);
+  color: var(--neutral-dark-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+.no-results-message {
+  color: var(--neutral-medium-gray);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .catalogue-controls {
+    gap: var(--spacing-md);
+  }
+
+  .filter-controls {
+    flex-direction: column;
+  }
+
+  .filter-select {
+    min-width: auto;
+  }
+
+  .results-summary {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .collections-grid,
+  .catalogue-grid {
+    gap: var(--spacing-md);
+  }
+
+  .collection-card,
+  .poem-card {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Loading states for catalogue */
+.loading-placeholder .collection-card.skeleton {
+  background: var(--neutral-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--neutral-light-gray);
+}
+
+/* Animation for catalogue items */
+.collection-card,
+.poem-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.collection-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.collection-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.collection-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.collection-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.collection-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.collection-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+/* Search highlighting */
+.highlight {
+  background-color: var(--primary-surface);
+  color: var(--neutral-black);
+  padding: 2px 4px;
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Filter active state */
+.filter-select:not([value=""]) {
+  border-color: var(--neutral-black);
+  background: var(--neutral-white);
+}
+
+/* Section transitions */
+.section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

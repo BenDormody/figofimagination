@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalogue - Fig of Imagination</title>
+    <meta
+      name="description"
+      content="Browse all poems in the Fig of Imagination collection"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/catalogue.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="nav-content">
+          <h1 class="site-title">Fig of Imagination</h1>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li>
+              <a href="catalogue.html" class="nav-link active">Catalogue</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Catalogue Header -->
+    <section class="catalogue-header">
+      <div class="container">
+        <div class="catalogue-intro">
+          <h2 class="catalogue-title">Poetry Catalogue</h2>
+          <p class="catalogue-subtitle">
+            Browse and discover all poems in the collection
+          </p>
+        </div>
+
+        <!-- Search and Filter Controls -->
+        <div class="catalogue-controls">
+          <div class="search-container">
+            <input
+              type="text"
+              id="search-input"
+              class="search-input"
+              placeholder="Search poems by title or content..."
+              aria-label="Search poems"
+            />
+            <button
+              type="button"
+              id="clear-search"
+              class="clear-search"
+              aria-label="Clear search"
+            >
+              ×
+            </button>
+          </div>
+
+          <div class="filter-controls">
+            <select
+              id="collection-filter"
+              class="filter-select"
+              aria-label="Filter by collection"
+            >
+              <option value="">All Collections</option>
+              <!-- Collections will be populated via JavaScript -->
+            </select>
+
+            <select
+              id="tag-filter"
+              class="filter-select"
+              aria-label="Filter by tag"
+            >
+              <option value="">All Tags</option>
+              <!-- Tags will be populated via JavaScript -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Results Summary -->
+        <div class="results-summary">
+          <span id="results-count" class="results-count">Loading poems...</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Poems Table Section -->
+    <section class="section poems-table-section" id="poems-table-section">
+      <div class="container">
+        <div class="table-container">
+          <table class="poems-table" id="poems-table">
+            <thead>
+              <tr>
+                <th class="table-header title-header">
+                  <button class="sort-button" data-sort="title">
+                    Title
+                    <span class="sort-icon">↕</span>
+                  </button>
+                </th>
+                <th class="table-header date-header">
+                  <button class="sort-button" data-sort="date">
+                    Date Written
+                    <span class="sort-icon">↕</span>
+                  </button>
+                </th>
+                <th class="table-header collection-header">Collection</th>
+              </tr>
+            </thead>
+            <tbody id="poems-table-body">
+              <!-- Poems will be loaded here via JavaScript -->
+              <tr class="loading-row">
+                <td colspan="3">
+                  <div class="loading-placeholder">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- No Results Section (Hidden by default) -->
+    <section class="section no-results-section hidden" id="no-results-section">
+      <div class="container">
+        <div class="no-results-content">
+          <h3 class="no-results-title">No poems found</h3>
+          <p class="no-results-message">
+            Try adjusting your search terms or filters to find what you're
+            looking for.
+          </p>
+          <button id="clear-filters" class="btn btn-primary">
+            Clear All Filters
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            &copy; 2024 Fig of Imagination. All rights reserved.
+          </p>
+          <p class="footer-text">
+            A personal poetry collection shared with the world.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/catalogue.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poem - Fig of Imagination</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/poem.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="nav-content">
+          <h1 class="site-title">Fig of Imagination</h1>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+      <div class="container">
+        <a href="index.html" class="breadcrumb-link">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="catalogue.html" class="breadcrumb-link">Catalogue</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current" id="breadcrumb-poem-title">Poem</span>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="poem-main">
+      <div class="container">
+        <!-- Loading State -->
+        <div class="loading-container" id="loading-container">
+          <div class="loading-spinner"></div>
+          <p class="loading-text">Loading poem...</p>
+        </div>
+
+        <!-- Poem Display -->
+        <div class="poem-container" id="poem-container" style="display: none">
+          <!-- Poem Card -->
+          <article class="poem-card">
+            <!-- Simple Poem Header -->
+            <header class="poem-header-simple">
+              <div class="poem-title-date">
+                <h1 class="poem-title-simple" id="poem-title">Poem Title</h1>
+                <div class="poem-date-simple" id="poem-date">
+                  March 15, 2024
+                </div>
+              </div>
+            </header>
+
+            <!-- Poem Content -->
+            <div class="poem-content">
+              <div class="poem-text" id="poem-text">
+                <!-- Poem content will be populated here -->
+              </div>
+            </div>
+
+            <!-- Pagination Controls -->
+            <div
+              class="pagination-controls"
+              id="pagination-controls"
+              style="display: none"
+            >
+              <button class="pagination-btn prev-btn" id="prev-btn" disabled>
+                <span class="btn-icon">←</span>
+                <span class="btn-text">Previous</span>
+              </button>
+              <div class="page-indicator">
+                <span class="current-page" id="current-page">1</span>
+                <span class="page-separator">of</span>
+                <span class="total-pages" id="total-pages">1</span>
+              </div>
+              <button class="pagination-btn next-btn" id="next-btn" disabled>
+                <span class="btn-text">Next</span>
+                <span class="btn-icon">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Navigation Between Poems -->
+          <div
+            class="poem-navigation"
+            id="poem-navigation"
+            style="display: none"
+          >
+            <div class="nav-section">
+              <h3 class="nav-section-title">In This Collection</h3>
+              <div class="collection-poems" id="collection-poems">
+                <!-- Collection poems will be listed here -->
+              </div>
+            </div>
+
+            <div class="nav-section">
+              <h3 class="nav-section-title">Navigation</h3>
+              <div class="nav-buttons">
+                <button
+                  class="nav-btn prev-poem-btn"
+                  id="prev-poem-btn"
+                  disabled
+                >
+                  <span class="btn-icon">←</span>
+                  <span class="btn-text">Previous Poem</span>
+                </button>
+                <button
+                  class="nav-btn next-poem-btn"
+                  id="next-poem-btn"
+                  disabled
+                >
+                  <span class="btn-text">Next Poem</span>
+                  <span class="btn-icon">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-container" id="error-container" style="display: none">
+          <div class="error-content">
+            <h2 class="error-title">Poem Not Found</h2>
+            <p class="error-message">
+              The poem you're looking for doesn't exist or has been moved.
+            </p>
+            <div class="error-actions">
+              <a href="catalogue.html" class="btn btn-primary"
+                >Browse All Poems</a
+              >
+              <a href="index.html" class="btn btn-secondary">Return Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            &copy; 2024 Fig of Imagination. All rights reserved.
+          </p>
+          <p class="footer-text">
+            A personal poetry collection shared with the world.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/poem.js"></script>
+  </body>
+</html>

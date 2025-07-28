@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fig of Imagination - Poetry Collection</title>
+    <meta
+      name="description"
+      content="A personal collection of poetry and creative writing"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="nav-content">
+          <h1 class="site-title">Fig of Imagination</h1>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Minimal Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="hero-title">Poetry Collection</h2>
+          <p class="hero-subtitle">
+            A personal collection of poetry and creative writing, shared with
+            the world.
+          </p>
+          <div class="hero-actions">
+            <a href="catalogue.html" class="btn btn-primary"
+              >Browse All Poems</a
+            >
+            <a href="#recent" class="btn btn-secondary">Recent Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Poems Section -->
+    <section id="recent" class="section recent-poems">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Recent Poems</h3>
+          <p class="section-subtitle">Latest additions to the collection</p>
+        </div>
+        <div class="poems-grid" id="recent-poems-grid">
+          <!-- Recent poems will be loaded here via JavaScript -->
+          <div class="loading-placeholder">
+            <div class="poem-card skeleton">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+            </div>
+            <div class="poem-card skeleton">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+            </div>
+            <div class="poem-card skeleton">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Poems Section -->
+    <section class="section featured-poems">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Featured Poems</h3>
+          <p class="section-subtitle">Curated selections from the collection</p>
+        </div>
+        <div class="poems-grid featured-grid" id="featured-poems-grid">
+          <!-- Featured poems will be loaded here via JavaScript -->
+          <div class="loading-placeholder">
+            <div class="poem-card skeleton">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+            </div>
+            <div class="poem-card skeleton">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">
+            &copy; 2024 Fig of Imagination. All rights reserved.
+          </p>
+          <p class="footer-text">
+            A personal poetry collection shared with the world.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

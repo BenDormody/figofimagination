@@ -1,0 +1,242 @@
+/* ===== HOME PAGE SPECIFIC STYLES ===== */
+
+/* Minimal Hero Section */
+.hero {
+  background: var(--primary-background);
+  color: var(--neutral-black);
+  padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+  text-align: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--spacing-md);
+  color: var(--neutral-black);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+  color: var(--neutral-medium-gray);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-actions .btn {
+  min-width: 140px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-2xl) 0 var(--spacing-xl);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+/* Recent Poems Section */
+.recent-poems {
+  background-color: var(--primary-surface);
+  padding: var(--spacing-3xl) 0;
+}
+
+.recent-poems .section-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Featured Poems Section */
+.featured-poems {
+  background-color: var(--primary-background);
+  padding: var(--spacing-3xl) 0;
+}
+
+.featured-poems .section-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Poem Card Enhancements for Home Page */
+.poem-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--neutral-white);
+  border: 1px solid var(--neutral-light-gray);
+}
+
+.poem-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--neutral-black);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.poem-card:hover::before {
+  transform: scaleX(1);
+}
+
+.poem-card-title {
+  position: relative;
+  color: var(--neutral-black);
+}
+
+.poem-card-preview {
+  position: relative;
+  min-height: 4.5em;
+  color: var(--neutral-dark-gray);
+}
+
+/* Featured poem cards have subtle distinction */
+.featured-grid .poem-card {
+  border-left: 3px solid var(--neutral-black);
+  background: var(--neutral-white);
+}
+
+.featured-grid .poem-card-title {
+  color: var(--neutral-black);
+}
+
+.featured-grid .poem-card::before {
+  background: var(--neutral-black);
+}
+
+/* Responsive adjustments for home page */
+@media (max-width: 1024px) {
+  .poems-grid {
+    gap: var(--spacing-md);
+  }
+
+  .poem-card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .poems-grid {
+    gap: var(--spacing-sm);
+  }
+
+  .poem-card {
+    padding: var(--spacing-md);
+  }
+
+  .poem-card-title {
+    font-size: var(--font-size-base);
+  }
+
+  .poem-card-preview {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Subtle animations for poem cards on page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.poem-card {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.poem-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.poem-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.poem-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.poem-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.poem-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.poem-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+/* Enhanced loading states for home page */
+.loading-placeholder .skeleton {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.loading-placeholder .skeleton:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.loading-placeholder .skeleton:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.loading-placeholder .skeleton:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* Section transitions */
+.section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero section specific animations */
+.hero-title {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.hero-actions {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}

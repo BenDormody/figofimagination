@@ -1,0 +1,22 @@
+{
+  "poems": [
+    {
+      "id": 1,
+      "title": "Gloss and Gripe",
+      "content": [
+        "Grapes glisten and shine\r\nFoxes mouth waters but yet\r\nUnreached grapes taste bad"
+      ],
+      "collection": "Aesop's Poems",
+      "dateCreated": "2023-10-28",
+      "featured": false,
+      "tags": ["nature", "fables", "haiku", "greed", "anthropomorphism"]
+    }
+  ],
+  "collections": [
+    {
+      "name": "Aesop's Poems",
+      "description": "Poems from the Aesop's Poems collection",
+      "poems": [1]
+    }
+  ]
+}
