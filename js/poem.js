@@ -479,12 +479,15 @@ function setupSocialBottomBar() {
   // Set up social media links (you can replace these with your actual URLs)
   const socialLinks = {
     instagram: "https://instagram.com/ben_dormody",
+    spotify:
+      "https://open.spotify.com/user/bk0hskxygegtknjfs382lit1d?si=8FkeD-_WRmyZYPBGkDhJhg",
     letterboxd: "https://letterboxd.com/BenFigbar",
     venmo: "https://venmo.com/Ben-Dormody",
   };
 
   // Update social media links
   document.getElementById("instagram-link").href = socialLinks.instagram;
+  document.getElementById("spotify-link").href = socialLinks.spotify;
   document.getElementById("letterboxd-link").href = socialLinks.letterboxd;
   document.getElementById("venmo-link").href = socialLinks.venmo;
 

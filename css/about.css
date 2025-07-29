@@ -1,0 +1,243 @@
+/* ===== ABOUT PAGE STYLES ===== */
+
+/* About Section */
+.about-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-header {
+  margin-bottom: 3rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.about-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.about-text {
+  text-align: left;
+  line-height: 1.8;
+}
+
+.about-paragraph {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.about-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.about-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.875rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.about-cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+/* Recommendations Section */
+.recommendations-section {
+  padding: 4rem 0;
+  background: #ffffff;
+}
+
+.recommendations-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.recommendations-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.recommendations-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recommendation-category {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.recommendation-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: #3498db;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-title i {
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+.artist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artist-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #34495e;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.artist-item:last-child {
+  border-bottom: none;
+}
+
+.artist-item:hover {
+  color: #3498db;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+
+  .recommendations-title {
+    font-size: 2rem;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .recommendation-category {
+    padding: 1.5rem;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .recommendations-title {
+    font-size: 1.75rem;
+  }
+
+  .about-cta .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Animation for page load */
+.about-content {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.recommendation-category {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.recommendation-category:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.recommendation-category:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.recommendation-category:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.recommendation-category:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.recommendation-category:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.recommendation-category:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
