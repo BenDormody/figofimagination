@@ -440,7 +440,7 @@
   }
 
   .poem-text {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     line-height: 1.7;
   }
 
