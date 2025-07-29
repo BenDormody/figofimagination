@@ -12,13 +12,19 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Header Navigation -->
     <header class="header">
       <nav class="nav-container">
         <div class="nav-content">
-          <h1 class="site-title">Fig of Imagination</h1>
+          <h1 class="site-title">
+            <a href="index.html" class="site-title-link">Fig of Imagination</a>
+          </h1>
           <ul class="nav-menu">
             <li><a href="index.html" class="nav-link">Home</a></li>
             <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
@@ -150,7 +156,7 @@
       <div class="container">
         <div class="footer-content">
           <p class="footer-text">
-            &copy; 2024 Fig of Imagination. All rights reserved.
+            &copy; 2025 Fig of Imagination. All rights reserved.
           </p>
           <p class="footer-text">
             A personal poetry collection shared with the world.
@@ -158,6 +164,42 @@
         </div>
       </div>
     </footer>
+
+    <!-- Social Media Bottom Bar -->
+    <div class="social-bottom-bar" id="social-bottom-bar">
+      <div class="social-links">
+        <a
+          href="#"
+          class="social-link"
+          id="instagram-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-instagram social-icon"></i>
+          <span class="social-text">Instagram</span>
+        </a>
+        <a
+          href="#"
+          class="social-link"
+          id="letterboxd-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fas fa-film social-icon"></i>
+          <span class="social-text">Letterboxd</span>
+        </a>
+        <a
+          href="#"
+          class="social-link"
+          id="venmo-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fas fa-coffee social-icon"></i>
+          <span class="social-text">Buy me a coffee</span>
+        </a>
+      </div>
+    </div>
 
     <script src="js/main.js"></script>
     <script src="js/poem.js"></script>

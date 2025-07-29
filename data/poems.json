@@ -1,6 +1,28 @@
 {
   "poems": [
     {
+      "id": 28,
+      "title": "Nocturnes, Op. 9: No. 1",
+      "content": [
+        "The stars twinkle so bright you seek a song, \r\na nocturne with words to sing along. \r\nYou draw a line between their bright shimmer,\r\nTheir dazzling lights you aim to decipher. \r\nWith steadfast nature you scribe a sonnet, \r\nIts glimmer outshines a diamond locket\r\nYou paint starry nights that loom so high, \r\nWith canvas you express and they reply. \r\nAll the auroras' nuances you do pursue, \r\nPicking terms and meaning to make them true.\r\nThe stars are all yours,you know them the best\r\nOnly you can express them with such finesse.\r\nBut as you spout your rhythm and rhyme, \r\nThe stars continue to sit there and shine."
+      ],
+      "collection": "At the Piano",
+      "dateCreated": "2021-07-29",
+      "featured": false,
+      "tags": ["sonnet", "inspired by Chopin"]
+    },
+    {
+      "id": 26,
+      "title": "Unnamed 1",
+      "content": [
+        "May I be honest, my friend? No more lies?\r\nI hate the scintillating stars so high.\r\nAgoraphobic, they blight sightly skies;\r\nWith unsubtle twinkle, glib do they fly.\r\nI hate the leaves too, in all shapes and shades:\r\nThey litter earth's ground with a rotting waste,\r\n and camouflage beautiful light green blades,\r\nAll to abandon ally tree in haste.\r\nI hold you not in the likeness of these.\r\nUnlike stars, selflessly you shine above,\r\nUnlike leaves, you're an ally to the trees,\r\nI lack hate for you; in that absence, love.\r\nI wish this nuance you truly did see,\r\nMaking this poem not apostrophe."
+      ],
+      "collection": "Homages",
+      "dateCreated": "2022-11-03",
+      "featured": false,
+      "tags": ["sonnet"]
+    },
+    {
       "id": 1,
       "title": "Gloss and Gripe",
       "content": [
@@ -9,7 +31,314 @@
       "collection": "Aesop's Poems",
       "dateCreated": "2023-10-28",
       "featured": false,
-      "tags": ["nature", "fables", "haiku", "greed", "anthropomorphism"]
+      "tags": ["haiku", "inspired by 'Aesop's Fables'"]
+    },
+    {
+      "id": 2,
+      "title": "Haiku 1",
+      "content": [
+        "Flames dance in the wind—\r\nThe one who lit them stumbles,\r\nBurns his own footsteps."
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-10-30",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 3,
+      "title": "Haiku 2",
+      "content": [
+        "Cherry blossoms fall.\r\nThe heart that seeks only joy\r\nMisses deeper springs."
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-10-30",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 4,
+      "title": "Haiku 3",
+      "content": [
+        "Morning dew settles—\r\nIn the quiet garden bed\r\nWorry cannot root."
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-10-31",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 5,
+      "title": "Haiku 4",
+      "content": [
+        "The child claps with joy—\r\nMagic blooms only for hearts\r\nThat choose not to know."
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-11-02",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 6,
+      "title": "Haiku 5",
+      "content": [
+        "No faith in the heart—\r\nthe magician’s hand reveals\r\nonly dust and smoke."
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-11-06",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 7,
+      "title": "Haiku 6",
+      "content": [
+        "Lone sheep wanders far—\r\nnot the shepherd's gentle staff\r\nbut wolf-teeth guide home"
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-11-09",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 8,
+      "title": "Haiku 7",
+      "content": [
+        "Sweet arrow enters—\r\nI meant love, but blood flows black\r\nfrom my fumbling hands"
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2023-11-09",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 9,
+      "title": "Haiku 8",
+      "content": [
+        "Mask upon mask falls—\r\nI am no one beneath them,\r\njust empty stage-light"
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2024-01-16",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 10,
+      "title": "Haiku 9",
+      "content": [
+        "God's crown weighs nothing—\r\nI crush lambs with my thick fists,\r\ncall it shepherding"
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2024-03-18",
+      "featured": false,
+      "tags": ["haiku", "inspired by religion"]
+    },
+    {
+      "id": 11,
+      "title": "Haiku 10",
+      "content": [
+        "My mouth bleeds foolish—\r\neach word a fresh wound that teaches,\r\nsilence breeds nothing"
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2024-03-18",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 12,
+      "title": "Haiku 11",
+      "content": [
+        "Masterless, He roam—\r\nfreedom tastes like rotting meat,\r\nHe howl at nothing"
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2024-03-19",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 27,
+      "title": "Nor I",
+      "content": [
+        "Harrowing Henry questions\r\nEyes filled with pursuit, love\r\nDoes in death cause conflicts\r\nArise\r\n\r\nReincarnation with challenge,\r\npresents; no fish loves on land.\r\nYet humbled Henry turned to frog,\r\nStretches legs to reach giraffes neck\r\n\r\nEqually Evangelic posture prevents,\r\nAs hating Henry knows Hell as home.\r\nJacob’s visions Henry hopes come true \r\nAngels allow transcendental travel.\r\n\r\nStill in most convenient form, burden\r\nShe will not bear, Henry watches on,\r\nHer legs seem not budge.\r\nAs with predicament Romeo,\r\nJuliet find solace in death \r\n-I saw nobody coming,\r\nso I went instead."
+      ],
+      "collection": "The Fair Spoon",
+      "dateCreated": "2024-03-29",
+      "featured": false,
+      "tags": ["free verse", "inspired by John Berryman"]
+    },
+    {
+      "id": 13,
+      "title": "The Paradox, Etc.",
+      "content": [
+        "Sweat pools, mounded dirt,\r\nunburrowed legume sprouts\r\nfor tiny hands uncomplaining.\r\nGrow now alongside produce;\r\nnever to ripen.\r\n\r\nLatin Lady Justice,\r\nblind scales poised.\r\nFairness sought only in\r\nimpartial paradox.\r\n\r\nSāi Wēng Lost His Horse,\r\nyet falls not for tricks of\r\nfairness judged by man.\r\nIllusions of justice guide \r\nonly fool, whom sets blame\r\nOn all sets of two, when Noah’s \r\nBarge breaks, ignorant of \r\nElephants in the room."
+      ],
+      "collection": "The Fair Spoon",
+      "dateCreated": "2024-09-12",
+      "featured": false,
+      "tags": ["free verse"]
+    },
+    {
+      "id": 25,
+      "title": "Unnamed 2",
+      "content": [
+        "Why is it; Arctic Tern, adrift\r\nin boundless sky - migration \r\nleads you further on.\r\nAnd in sleepless flight; drifting\r\nover lush lands bound together,\r\nInattentive glances seek stories,\r\nin clouds, with none told.\r\nRefuge is not lost, but forgone,\r\ncomfort left behind in eternal flight.\r\n\r\nFor you I’m grateful Arctic Tern,\r\nAs on your tour of this world, with\r\nthe tallest mountains, deepest oceans,\r\nwarmest summers, and coldest winters, \r\nhere you chose to rest until you were;\r\nGone."
+      ],
+      "collection": "Homages",
+      "dateCreated": "2024-11-04",
+      "featured": false,
+      "tags": ["free verse"]
+    },
+    {
+      "id": 23,
+      "title": "Unnamed 3",
+      "content": [
+        "Camouflaged creature,\r\nHis tie, nature knotted, \r\nAdapted garb, suit the scene— \r\nMasked intentions,\r\nEmpowers his elusive deviance.\r\nLucky me, my house has thick walls.\r\nElect; a term of comfort;leaves me, \r\nOblivious to adjacent dangers…\r\nNow he’s got my daughter’s body."
+      ],
+      "collection": null,
+      "dateCreated": "2024-11-21",
+      "featured": false,
+      "tags": ["free verse", "inspired by politics"]
+    },
+    {
+      "id": 17,
+      "title": "Conquester",
+      "content": [
+        "Beneath a sky of fractured violet,\r\n he stepped from steel, a stranger’s silhouette—\r\n a Martian cloaked in dust of rusted wars, \r\nto plant a flag where no flag had been set.\r\n\r\n\"This soil is ours,\" his amplifiers hissed, \r\nas drills bit deep where ancient rivers wept.\r\n He built his towers tall as fractured vows, \r\nwhile native winds, in tongues he silenced, crept.\r\n\r\nThe creatures there—all prism-winged and thorned— \r\nsplit into tribes: some knelt, some roared, \"Be gone!\"\r\n He fed them light from screens of bleeding ore, \r\nsplit truth to sparks, then sold each spark as dawn.\r\n\r\n\"Progress,\" he vowed, \"requires unmarked earth,\"\r\n yet mapped the veins of gold beneath their feet.\r\n His laws were coded in unspoken thirst— \r\nto own, to take, to make the pulse retreat.\r\n\r\nBut in the cracks where his machines forgot,\r\n a murmur grew—a chorus from the roots.\r\n The oldest stones began to hum a chord\r\n that bent his grids and choked his hollow fruits.\r\n\r\nNow watch this world, half-shadowed, split in two: \r\none half his myth, one half the wild’s reply.\r\n What blooms where empires of the void collide? \r\nNot conquest’s yield, but seeds that question why."
+      ],
+      "collection": null,
+      "dateCreated": "2024-12-17",
+      "featured": false,
+      "tags": ["free verse", "inspired by politics"]
+    },
+    {
+      "id": 19,
+      "title": "Unnamed 4",
+      "content": [
+        "The cold burns my lip and ears\r\ndispleasing ice fills veins to my knees\r\nself contained my complaints I fear,\r\nChildish whining is, when dressed to freeze."
+      ],
+      "collection": null,
+      "dateCreated": "2024-12-31",
+      "featured": false,
+      "tags": ["free verse"]
+    },
+    {
+      "id": 15,
+      "title": "A Dog's Five O'Clock Meal",
+      "content": [
+        "Hopeless Henry writes to God, “Why,\r\nwhy do you plague me with sadness.\r\nThis debt of tears is not one I owe, does not\r\nmy prayer and unwavering toil merit joy?”\r\n\r\nTo this God replies, \"I have endowed \r\nyou with all that is rightfully yours, my child.\r\nI entrust to you not a prebuilt heaven,\r\nbut the means to forge your own eden, \r\nand in this life, I bequeath not just a mere smile, \r\nbut the visage that may conjure one.\"\r\n\r\nHumbled Henry finds painful resolve in God's reply,\r\nWhile Halted Henry dreads that; with him all is left. \r\nHe comprehends he's earned nothing—neither skies, trees, nor stars, \r\nFor beguiling words often waltz as pretty lies for him to embrace.\r\nHopeful Henry rests again in hollow grave \r\nwith only bones to keep him warm."
+      ],
+      "collection": "The Fair Spoon",
+      "dateCreated": "2025-01-09",
+      "featured": false,
+      "tags": [
+        "free verse",
+        "inspired by religion",
+        "inspired by John Berryman"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "The Muse",
+      "content": [
+        "Lashed in vermilion, Peter’s Muse awoke—\r\nher hair a riot of glyphs, her eyes undone—\r\nO, what immortal grievance did I stoke\r\nto birth this Fury, scribbled, sly, outrun?\r\n\r\nShe peeled the hours like varnish from a frame,\r\n & lo! the canvas screamed in tongues of blue: \r\nYou plucked my wings for ink, now feast on shame,\r\n you, drunk on sonnets, lost in subplot stew.\r\n\r\nHer scissors snipped the chronology of days,\r\n each cut a stanza, fractured, overgrown— Peter, \r\nagog, chewed verbs in dismal praise: \r\nThe plot’s her own, the wreckage mine alone.\r\n\r\nThe palette knives she wielded, cruel & bright, \r\nflayed hymns from his ribs, left psalms in the rain. \r\nO Muse, he cried, unmap this spite, \r\nbut she gridlocked the sky with her migraine train.\r\n\r\nNow Peter’s text is braille, his page a pyre,\r\n her vengeance stitched in every glyphic thorn.\r\nher voice a strike of fire, she yelled in scorn\r\nI’ll keep you company for his eyes began to tire"
+      ],
+      "collection": "In an Art Musem",
+      "dateCreated": "2025-02-05",
+      "featured": false,
+      "tags": ["free verse", "inspired by Ilya Milstein"]
+    },
+    {
+      "id": 18,
+      "title": "Unnamed 5",
+      "content": [
+        "In hours, are making of minutes,\r\nwithin which several seconds.\r\nto lose half forever is not all lost.\r\nWe care not for created time,\r\nbut yet create time for what we care."
+      ],
+      "collection": null,
+      "dateCreated": "2025-02-19",
+      "featured": false,
+      "tags": ["free verse"]
+    },
+    {
+      "id": 16,
+      "title": "La Grenouillère",
+      "content": [
+        "Less he impressionist —  \r\npride not in the draft,  \r\nI cannot value mine  \r\nexistence until it\r\nis not"
+      ],
+      "collection": "In an Art Musem",
+      "dateCreated": "2025-03-18",
+      "featured": false,
+      "tags": ["free verse", "inspired by Pierre-Auguste Renoir"]
+    },
+    {
+      "id": 24,
+      "title": "The Blameless Diplomat",
+      "content": [
+        "Blame dropped on circumstance,\r\nwasteful; as the fisherman who’s\r\nlegs soak upstream.\r\nThose with naught knowledge,\r\nare easily tempted by evil fruits.\r\nIntellects justify red horrors, with \r\nmaps of green and blue.\r\n\r\nI beseech you, \r\nwho bears the burden of pain,\r\nunbearable,\r\nwho is at fault?\r\nThe ruler Macbeth, with which\r\nlovers death, orchestrated;\r\nresult of plan and deceit,\r\nor lover Romeo, who’s maiden\r\nkilled, by his inability to see harm,\r\nin guise of love."
+      ],
+      "collection": "The Fair Spoon",
+      "dateCreated": "2025-04-10",
+      "featured": false,
+      "tags": ["free verse"]
+    },
+    {
+      "id": 21,
+      "title": "The Grandiose of a Sand Castle",
+      "content": [
+        "Beautiful Birds reflections call, tiny skulls\r\nsnap wetting their beaks in glass. En-groused;\r\nBlossoming lovers snap stems from earth, bar\r\nthose who’s worn whimsy presents.\r\n\r\nThe most delectable canines, \r\ntheir fangs so refined, \r\neat only dust, never bones, with \r\nMouths left arid, bellies abandoned to solitude \r\n\r\nPrize hog squeals, while bovine  companions' \r\nmournful moos curdle  in lament, birthing an \r\nescalation  of prices with a volatile fervor \r\n\r\nBefore flames engulfed each pedal, \r\n now their grey hues match only the \r\nempty hedge-stone.\r\nElegant bones below, sing their  song \r\nonly for those forgotten, with no time left to listen."
+      ],
+      "collection": "The Fair Spoon",
+      "dateCreated": "2025-04-13",
+      "featured": false,
+      "tags": ["free verse"]
+    },
+    {
+      "id": 20,
+      "title": "Haiku 12",
+      "content": [
+        "letter, number, me.\r\nRulers track my diffident mind,\r\nI’d rate this a C."
+      ],
+      "collection": "Haikus",
+      "dateCreated": "2025-05-01",
+      "featured": false,
+      "tags": ["haiku"]
+    },
+    {
+      "id": 22,
+      "title": "Nocturnes, Op. 32: No. 1",
+      "content": [
+        "Felix Mendelssohn, master\r\nof the songbird’s tongue, once confessed\r\n—a thought on Chopin’s prelude—\r\n\r\n\"I love it. I cannot tell you how much\r\nor why, only that it is something\r\nI could never have written myself.\"\r\n\r\nWas it the failure to etch such notes\r\non paper that stirred him?\r\nPerhaps—but I veer away.\r\nMendelssohn’s struggle,\r\nnot of hand or ear, but of existence itself.\r\n\r\nAs Chopin's heart pumped beat,\r\nescaping the confines of repetition, \r\nso too, our days move—\r\n\r\nEven the author writing my Monday \r\nmisses the way the air hums"
+      ],
+      "collection": "At the Piano",
+      "dateCreated": "2025-05-12",
+      "featured": false,
+      "tags": ["free verse", "inspired by Chopin"]
+    },
+    {
+      "id": 30,
+      "title": "The Game of Mao",
+      "content": [
+        "If we began, break conven'thn \r\ndisgruntled, father if he a literate man. \r\ndo'er hear language of meow o bark \r\nneir yet broken made sentence.\r\nI commit a disservice? for I pray not, \r\nyesterdays child tears skin from aspen \r\nfear not- or fear - weightless skin \r\nplaces no urgency onto his gavel.\r\n\r\n\"What your acts to me father\" \r\nswine skin... no, an earful graize\r\nwill not do — allowed onward to drown\r\nmine land, thou neighbor land,\r\npiggish spit and slober.\r\nO is father not a lawful man?\r\nHarvard ought offer scolarships.\r\n\r\nAssign suit to testiment,\r\nthus warrants discussion of Mao's game.\r\nWere not I privy to your language;\r\nAm I now subject to sink?"
+      ],
+      "collection": "The Fair Spoon",
+      "dateCreated": "2025-06-04",
+      "featured": false,
+      "tags": [
+        "free verse",
+        "draft",
+        "inspired by John Berryman",
+        "inspired by politics",
+        "inspired by religion"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Nothin' Hurt a Koala",
+      "content": [
+        "I've spoken a quote, \r\nknow not of who said. \r\nBut it seemed pretty important\r\nwhen out loud it's read.\r\n\r\nI've bought these new shoes, \r\nknow not how they're made. \r\nBut they fit me so nicely \r\nwhen conscience can fade.\r\n\r\nI've spread their message,\r\nknow not what it means. \r\nBut sharing feels righteous \r\nthrough my glowing screens.\r\n\r\nI've signed their petition, \r\nknow not what it seeks. \r\nBut my name looks important \r\nwhen the cause barely speaks.\r\n\r\nI've elected a man, \r\nknow not what he'll do. \r\nBut his promises glisten \r\nwhen I'm not looking through.\r\n\r\nThey've moved out my neighbor, \r\nknow not where they've gone. \r\nBut property values risen \r\nsince they moved along.\r\n\r\nI've razed the last forest, \r\nknow not what once grew. \r\nThe concrete spreads easier \r\nwhen green turns to blue.\r\n\r\nI've poisoned the river, \r\nknow not what drinks there. \r\nThe water runs clearer \r\nwhen less breathe the air.\r\n\r\nI've silenced the voices, \r\nknow not what they'd say. \r\nBut peace sounds like music \r\nwhen dissent fades away.\r\n\r\nI've created a bomb, \r\nknow not who it hurts. \r\nBut the silence feels golden\r\nwhen the screaming reverts.\r\n\r\nI've ended the world, \r\nknow not what comes next. \r\nYet here in my comfort, \r\nI remain unperplexed."
+      ],
+      "collection": null,
+      "dateCreated": "2025-07-01",
+      "featured": true,
+      "tags": ["baliad", "inspired by politics", "draft"]
     }
   ],
   "collections": [
@@ -17,6 +346,31 @@
       "name": "Aesop's Poems",
       "description": "Poems from the Aesop's Poems collection",
       "poems": [1]
+    },
+    {
+      "name": "Haikus",
+      "description": "Poems from the Haikus collection",
+      "poems": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 20]
+    },
+    {
+      "name": "A Fair Trial",
+      "description": "Poems from the The Fair Spoon collection",
+      "poems": [13, 15, 21, 24, 27, 30]
+    },
+    {
+      "name": "In an Art Museum",
+      "description": "Poems from the In an Art Museum collection",
+      "poems": [14, 16]
+    },
+    {
+      "name": "At the Piano",
+      "description": "Poems from the At the Piano collection",
+      "poems": [22, 28]
+    },
+    {
+      "name": "Homages",
+      "description": "Poems from the Homages collection",
+      "poems": [25, 26]
     }
   ]
 }

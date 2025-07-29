@@ -29,7 +29,7 @@ async function initializeHomePage() {
   }
 }
 
-// Display recent poems (3-5 most recent)
+// Display recent poems (6 most recent)
 function displayRecentPoems(poems) {
   if (!recentPoemsGrid || !poems) return;
 
@@ -40,8 +40,8 @@ function displayRecentPoems(poems) {
     return dateB - dateA;
   });
 
-  // Take the first 3-5 poems
-  const recentPoems = sortedPoems.slice(0, 5);
+  // Take the first 6 poems
+  const recentPoems = sortedPoems.slice(0, 6);
 
   // Clear loading state
   recentPoemsGrid.innerHTML = "";
@@ -93,34 +93,53 @@ function displayFeaturedPoems(poems) {
 
 // Enhanced poem card creation for home page
 function createPoemPreview(poem) {
-  if (
-    !poem.content ||
-    !Array.isArray(poem.content) ||
-    poem.content.length === 0
-  ) {
+  if (!poem.content) {
     return "No preview available";
   }
 
-  // Get the first stanza and limit to first few lines
-  const firstStanza = poem.content[0];
-  const lines = firstStanza.split("\n").filter((line) => line.trim());
-  const previewLines = lines.slice(0, 3);
+  let previewText = "";
 
-  return previewLines.join("\n");
+  // Handle both array and string content formats
+  if (Array.isArray(poem.content)) {
+    if (poem.content.length === 0) {
+      return "No preview available";
+    }
+
+    // Join array elements and get the first stanza
+    const fullContent = poem.content.join("\r\n\r\n");
+    const firstStanza = fullContent.split("\r\n\r\n")[0];
+    const lines = firstStanza.split("\r\n").filter((line) => line.trim());
+    const previewLines = lines.slice(0, 3);
+    previewText = previewLines.join("\n");
+  } else if (typeof poem.content === "string") {
+    // For string content, get the first stanza (before first \r\n\r\n)
+    const firstStanza = poem.content.split("\r\n\r\n")[0];
+    const lines = firstStanza.split("\r\n").filter((line) => line.trim());
+    const previewLines = lines.slice(0, 3);
+    previewText = previewLines.join("\n");
+  }
+
+  return previewText || "No preview available";
 }
 
 // Add smooth scrolling for anchor links
 function setupSmoothScrolling() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+      const href = this.getAttribute("href");
+
+      // Only handle internal anchor links (starting with #)
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       }
+      // For external links (like social media), let the default behavior happen
     });
   });
 }
@@ -147,12 +166,12 @@ function setupKeyboardNavigation() {
 function setupFocusManagement() {
   // Make poem cards focusable
   document.querySelectorAll(".poem-card").forEach((card) => {
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("role", "button");
-    card.setAttribute(
-      "aria-label",
-      `Read ${card.querySelector(".poem-card-title").textContent}`
-    );
+    const titleElement = card.querySelector(".poem-card-title");
+    if (titleElement && titleElement.textContent) {
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", `Read ${titleElement.textContent}`);
+    }
   });
 }
 
@@ -200,6 +219,73 @@ function trackPoemClick(poemId, poemTitle) {
   console.log(`Poem clicked: ${poemTitle} (ID: ${poemId})`);
 }
 
+// ===== SOCIAL MEDIA BOTTOM BAR FUNCTIONALITY =====
+
+// Setup social media bottom bar
+function setupSocialBottomBar() {
+  const socialBar = document.getElementById("social-bottom-bar");
+  if (!socialBar) return;
+
+  // Set up social media links (you can replace these with your actual URLs)
+  const socialLinks = {
+    instagram: "https://instagram.com/ben_dormody",
+    letterboxd: "https://letterboxd.com/BenFigbar",
+    venmo: "https://venmo.com/u/Ben-Dormody",
+  };
+
+  // Update social media links
+  document.getElementById("instagram-link").href = socialLinks.instagram;
+  document.getElementById("letterboxd-link").href = socialLinks.letterboxd;
+  document.getElementById("venmo-link").href = socialLinks.venmo;
+
+  // Show/hide social bar based on scroll position
+  let isVisible = false;
+  let scrollTimeout;
+
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+
+    // Show bar when scrolled to bottom 10% of the page
+    const shouldShow = scrollPercentage > 0.9;
+
+    if (shouldShow && !isVisible) {
+      socialBar.classList.add("visible");
+      isVisible = true;
+    } else if (!shouldShow && isVisible) {
+      socialBar.classList.remove("visible");
+      isVisible = false;
+    }
+  }
+
+  // Throttle scroll events for better performance
+  function throttledScroll() {
+    if (scrollTimeout) return;
+
+    scrollTimeout = setTimeout(() => {
+      handleScroll();
+      scrollTimeout = null;
+    }, 100);
+  }
+
+  // Add scroll event listener
+  window.addEventListener("scroll", throttledScroll, { passive: true });
+
+  // Initial check
+  handleScroll();
+
+  // Add click tracking for social links
+  document.querySelectorAll(".social-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const platform = e.currentTarget.id.replace("-link", "");
+      console.log(`Social link clicked: ${platform}`);
+      // Add analytics tracking here if needed
+    });
+  });
+}
+
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize home page functionality
@@ -210,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupKeyboardNavigation();
   setupFocusManagement();
   setupLazyLoading();
+  setupSocialBottomBar();
 
   // Track page view
   trackPageView();

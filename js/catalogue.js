@@ -152,7 +152,18 @@ function filterAndDisplayPoems() {
     if (currentSearchTerm) {
       const searchLower = currentSearchTerm.toLowerCase();
       const title = (poem.title || "").toLowerCase();
-      const content = poem.content ? poem.content.join(" ").toLowerCase() : "";
+
+      // Handle both array and string content formats
+      let content = "";
+      if (poem.content) {
+        if (Array.isArray(poem.content)) {
+          // Join array elements and replace line breaks with spaces for search
+          content = poem.content.join(" ").replace(/\r\n/g, " ").toLowerCase();
+        } else if (typeof poem.content === "string") {
+          content = poem.content.replace(/\r\n/g, " ").toLowerCase();
+        }
+      }
+
       const tags = poem.tags ? poem.tags.join(" ").toLowerCase() : "";
 
       if (
@@ -180,14 +191,36 @@ function filterAndDisplayPoems() {
 function sortPoems() {
   switch (currentSortOption) {
     case "date-desc":
-      filteredPoems.sort(
-        (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)
-      );
+      filteredPoems.sort((a, b) => {
+        const dateA = new Date(a.dateCreated);
+        const dateB = new Date(b.dateCreated);
+        const dateComparison = dateB - dateA;
+
+        // If dates are the same, sort by title
+        if (dateComparison === 0) {
+          const titleA = (a.title || `Poem ${a.id}`).toLowerCase();
+          const titleB = (b.title || `Poem ${b.id}`).toLowerCase();
+          return titleA.localeCompare(titleB);
+        }
+
+        return dateComparison;
+      });
       break;
     case "date-asc":
-      filteredPoems.sort(
-        (a, b) => new Date(a.dateCreated) - new Date(b.dateCreated)
-      );
+      filteredPoems.sort((a, b) => {
+        const dateA = new Date(a.dateCreated);
+        const dateB = new Date(b.dateCreated);
+        const dateComparison = dateA - dateB;
+
+        // If dates are the same, sort by title
+        if (dateComparison === 0) {
+          const titleA = (a.title || `Poem ${a.id}`).toLowerCase();
+          const titleB = (b.title || `Poem ${b.id}`).toLowerCase();
+          return titleA.localeCompare(titleB);
+        }
+
+        return dateComparison;
+      });
       break;
     case "title-asc":
       filteredPoems.sort((a, b) => {
@@ -482,10 +515,78 @@ const debouncedSearch = debounce(() => {
   filterAndDisplayPoems();
 }, 300);
 
+// ===== SOCIAL MEDIA BOTTOM BAR FUNCTIONALITY =====
+
+// Setup social media bottom bar
+function setupSocialBottomBar() {
+  const socialBar = document.getElementById("social-bottom-bar");
+  if (!socialBar) return;
+
+  // Set up social media links (you can replace these with your actual URLs)
+  const socialLinks = {
+    instagram: "https://instagram.com/ben_dormody",
+    letterboxd: "https://letterboxd.com/BenFigbar",
+    venmo: "https://venmo.com/Ben-Dormody",
+  };
+
+  // Update social media links
+  document.getElementById("instagram-link").href = socialLinks.instagram;
+  document.getElementById("letterboxd-link").href = socialLinks.letterboxd;
+  document.getElementById("venmo-link").href = socialLinks.venmo;
+
+  // Show/hide social bar based on scroll position
+  let isVisible = false;
+  let scrollTimeout;
+
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+
+    // Show bar when scrolled to bottom 10% of the page
+    const shouldShow = scrollPercentage > 0.9;
+
+    if (shouldShow && !isVisible) {
+      socialBar.classList.add("visible");
+      isVisible = true;
+    } else if (!shouldShow && isVisible) {
+      socialBar.classList.remove("visible");
+      isVisible = false;
+    }
+  }
+
+  // Throttle scroll events for better performance
+  function throttledScroll() {
+    if (scrollTimeout) return;
+
+    scrollTimeout = setTimeout(() => {
+      handleScroll();
+      scrollTimeout = null;
+    }, 100);
+  }
+
+  // Add scroll event listener
+  window.addEventListener("scroll", throttledScroll, { passive: true });
+
+  // Initial check
+  handleScroll();
+
+  // Add click tracking for social links
+  document.querySelectorAll(".social-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const platform = e.currentTarget.id.replace("-link", "");
+      console.log(`Social link clicked: ${platform}`);
+      // Add analytics tracking here if needed
+    });
+  });
+}
+
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   initializeCatalogue();
   setupKeyboardNavigation();
+  setupSocialBottomBar();
 });
 
 // Export functions for potential use in other modules

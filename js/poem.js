@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     showError("No poem ID provided");
   }
+
+  // Setup social bottom bar
+  setupSocialBottomBar();
 });
 
 // Load poem by ID
@@ -92,21 +95,46 @@ function displayPoem(poem) {
 
 // Display all poem content without pagination
 function displayAllPoemContent(content) {
-  // Create poem text HTML as one continuous poem with single line breaks between stanzas
-  const poemHTML = content
-    .map((stanza, index) => {
-      const lines = stanza.split("\n").filter((line) => line.trim());
-      const stanzaLines = lines
-        .map((line) => `<div class="poem-line">${line}</div>`)
-        .join("");
+  let poemHTML = "";
 
-      // Add a single line break between stanzas (except after the last stanza)
-      if (index < content.length - 1) {
-        return stanzaLines + '<div class="poem-line stanza-break"></div>';
-      }
-      return stanzaLines;
-    })
-    .join("");
+  // Handle both array of stanzas and single string with stanza breaks
+  if (Array.isArray(content)) {
+    // If content is an array, join all elements and then split by \r\n\r\n
+    const fullContent = content.join("\r\n\r\n");
+    const stanzas = fullContent.split("\r\n\r\n");
+
+    poemHTML = stanzas
+      .map((stanza, index) => {
+        const lines = stanza.split("\r\n").filter((line) => line.trim());
+        const stanzaLines = lines
+          .map((line) => `<div class="poem-line">${line}</div>`)
+          .join("");
+
+        // Add a single line break between stanzas (except after the last stanza)
+        if (index < stanzas.length - 1) {
+          return stanzaLines + '<div class="poem-line stanza-break"></div>';
+        }
+        return stanzaLines;
+      })
+      .join("");
+  } else if (typeof content === "string") {
+    // If content is a single string, split by \r\n\r\n to get stanzas
+    const stanzas = content.split("\r\n\r\n");
+    poemHTML = stanzas
+      .map((stanza, index) => {
+        const lines = stanza.split("\r\n").filter((line) => line.trim());
+        const stanzaLines = lines
+          .map((line) => `<div class="poem-line">${line}</div>`)
+          .join("");
+
+        // Add a single line break between stanzas (except after the last stanza)
+        if (index < stanzas.length - 1) {
+          return stanzaLines + '<div class="poem-line stanza-break"></div>';
+        }
+        return stanzaLines;
+      })
+      .join("");
+  }
 
   poemText.innerHTML = poemHTML;
 }
@@ -115,9 +143,18 @@ function displayAllPoemContent(content) {
 function processPoemContent(content) {
   poemPages = [];
 
+  let stanzas = [];
+
+  // Handle both array of stanzas and single string with stanza breaks
+  if (Array.isArray(content)) {
+    stanzas = content;
+  } else if (typeof content === "string") {
+    stanzas = content.split("\r\n\r\n");
+  }
+
   // Each stanza becomes a page
-  content.forEach((stanza, index) => {
-    const lines = stanza.split("\n").filter((line) => line.trim());
+  stanzas.forEach((stanza, index) => {
+    const lines = stanza.split("\r\n").filter((line) => line.trim());
     if (lines.length > 0) {
       poemPages.push({
         stanza: index + 1,
@@ -431,3 +468,70 @@ displayCurrentPage = function () {
   originalDisplayCurrentPage();
   addPageNumberButtons();
 };
+
+// ===== SOCIAL MEDIA BOTTOM BAR FUNCTIONALITY =====
+
+// Setup social media bottom bar
+function setupSocialBottomBar() {
+  const socialBar = document.getElementById("social-bottom-bar");
+  if (!socialBar) return;
+
+  // Set up social media links (you can replace these with your actual URLs)
+  const socialLinks = {
+    instagram: "https://instagram.com/ben_dormody",
+    letterboxd: "https://letterboxd.com/BenFigbar",
+    venmo: "https://venmo.com/Ben-Dormody",
+  };
+
+  // Update social media links
+  document.getElementById("instagram-link").href = socialLinks.instagram;
+  document.getElementById("letterboxd-link").href = socialLinks.letterboxd;
+  document.getElementById("venmo-link").href = socialLinks.venmo;
+
+  // Show/hide social bar based on scroll position
+  let isVisible = false;
+  let scrollTimeout;
+
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+
+    // Show bar when scrolled to bottom 10% of the page
+    const shouldShow = scrollPercentage > 0.9;
+
+    if (shouldShow && !isVisible) {
+      socialBar.classList.add("visible");
+      isVisible = true;
+    } else if (!shouldShow && isVisible) {
+      socialBar.classList.remove("visible");
+      isVisible = false;
+    }
+  }
+
+  // Throttle scroll events for better performance
+  function throttledScroll() {
+    if (scrollTimeout) return;
+
+    scrollTimeout = setTimeout(() => {
+      handleScroll();
+      scrollTimeout = null;
+    }, 100);
+  }
+
+  // Add scroll event listener
+  window.addEventListener("scroll", throttledScroll, { passive: true });
+
+  // Initial check
+  handleScroll();
+
+  // Add click tracking for social links
+  document.querySelectorAll(".social-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const platform = e.currentTarget.id.replace("-link", "");
+      console.log(`Social link clicked: ${platform}`);
+      // Add analytics tracking here if needed
+    });
+  });
+}

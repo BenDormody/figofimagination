@@ -40,7 +40,7 @@ function getPoemPreview(content) {
 
   // Get the first stanza and limit to first few lines
   const firstStanza = content[0];
-  const lines = firstStanza.split("\n").filter((line) => line.trim());
+  const lines = firstStanza.split("\r\n").filter((line) => line.trim());
   const previewLines = lines.slice(0, 3);
 
   return previewLines.join("\n");
