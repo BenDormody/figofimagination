@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Setup social bottom bar
   setupSocialBottomBar();
+
+  // Track page view
+  if (typeof gtag !== "undefined") {
+    gtag("event", "page_view", {
+      page_title: "Poem - Fig of Imagination",
+      page_location: window.location.href,
+    });
+  }
 });
 
 // Load poem by ID
@@ -91,6 +99,16 @@ function displayPoem(poem) {
   // Show poem container
   hideLoading();
   poemContainer.style.display = "block";
+
+  // Track poem view
+  if (typeof gtag !== "undefined") {
+    gtag("event", "poem_view", {
+      poem_id: poem.id,
+      poem_title: title,
+      collection: poem.collection || null,
+      page_location: window.location.href,
+    });
+  }
 }
 
 // Display all poem content without pagination
@@ -298,6 +316,15 @@ function setupCollectionNavigation(currentPoemId) {
 
 // Navigate to a specific poem
 function navigateToPoem(poemId) {
+  // Track poem navigation
+  if (typeof gtag !== "undefined" && currentPoem) {
+    gtag("event", "poem_navigation", {
+      from_poem_id: currentPoem.id,
+      from_poem_title: currentPoem.title || `Poem ${currentPoem.id}`,
+      to_poem_id: poemId,
+      page_location: window.location.href,
+    });
+  }
   window.location.href = `poem.html?id=${poemId}`;
 }
 
@@ -533,8 +560,18 @@ function setupSocialBottomBar() {
   document.querySelectorAll(".social-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       const platform = e.currentTarget.id.replace("-link", "");
-      console.log(`Social link clicked: ${platform}`);
-      // Add analytics tracking here if needed
+      // Track social media clicks
+      if (typeof gtag !== "undefined") {
+        gtag("event", "social_click", {
+          platform: platform,
+          page_location: window.location.href,
+          source: "poem_page",
+          poem_id: currentPoem ? currentPoem.id : null,
+          poem_title: currentPoem
+            ? currentPoem.title || `Poem ${currentPoem.id}`
+            : null,
+        });
+      }
     });
   });
 }

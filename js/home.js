@@ -208,15 +208,27 @@ function handleLoadError(container, retryFunction) {
   window.retryLoad = retryFunction;
 }
 
-// Analytics tracking (if needed)
+// Analytics tracking
 function trackPageView() {
-  // Add analytics tracking here if needed
-  console.log("Home page viewed");
+  // Track home page view
+  if (typeof gtag !== "undefined") {
+    gtag("event", "page_view", {
+      page_title: "Home - Fig of Imagination",
+      page_location: window.location.href,
+    });
+  }
 }
 
 function trackPoemClick(poemId, poemTitle) {
-  // Add analytics tracking here if needed
-  console.log(`Poem clicked: ${poemTitle} (ID: ${poemId})`);
+  // Track poem click from home page
+  if (typeof gtag !== "undefined") {
+    gtag("event", "poem_click", {
+      poem_id: poemId,
+      poem_title: poemTitle,
+      page_location: window.location.href,
+      source: "home_page",
+    });
+  }
 }
 
 // ===== SOCIAL MEDIA BOTTOM BAR FUNCTIONALITY =====
@@ -283,8 +295,14 @@ function setupSocialBottomBar() {
   document.querySelectorAll(".social-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       const platform = e.currentTarget.id.replace("-link", "");
-      console.log(`Social link clicked: ${platform}`);
-      // Add analytics tracking here if needed
+      // Track social media clicks
+      if (typeof gtag !== "undefined") {
+        gtag("event", "social_click", {
+          platform: platform,
+          page_location: window.location.href,
+          source: "home_page",
+        });
+      }
     });
   });
 }

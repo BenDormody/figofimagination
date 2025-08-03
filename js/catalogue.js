@@ -55,6 +55,14 @@ async function initializeCatalogue() {
     setupEventListeners();
     updateSortButtonStates();
     updateResultsCount();
+
+    // Track page view
+    if (typeof gtag !== "undefined") {
+      gtag("event", "page_view", {
+        page_title: "Catalogue - Fig of Imagination",
+        page_location: window.location.href,
+      });
+    }
   } catch (error) {
     console.error("Error initializing catalogue:", error);
     showError(poemsTableBody, "Failed to load poems");
@@ -293,6 +301,16 @@ function createPoemTableRow(poem, index) {
 
   // Add click handler
   row.addEventListener("click", () => {
+    // Track poem table row click
+    if (typeof gtag !== "undefined") {
+      gtag("event", "poem_table_click", {
+        poem_id: poem.id,
+        poem_title: title,
+        collection: collection || null,
+        page_location: window.location.href,
+        source: "catalogue_table",
+      });
+    }
     navigateToPoem(poem.id);
   });
 
@@ -373,9 +391,20 @@ function setupEventListeners() {
   // Search input
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
-      currentSearchTerm = e.target.value.trim();
+      const newSearchTerm = e.target.value.trim();
+      const searchChanged = newSearchTerm !== currentSearchTerm;
+      currentSearchTerm = newSearchTerm;
       updateClearSearchButton();
       filterAndDisplayPoems();
+
+      // Track search if term changed and is not empty
+      if (searchChanged && currentSearchTerm && typeof gtag !== "undefined") {
+        gtag("event", "search", {
+          search_term: currentSearchTerm,
+          results_count: filteredPoems.length,
+          page_location: window.location.href,
+        });
+      }
     });
 
     searchInput.addEventListener("keydown", (e) => {
@@ -393,16 +422,38 @@ function setupEventListeners() {
   // Collection filter
   if (collectionFilter) {
     collectionFilter.addEventListener("change", (e) => {
-      currentCollectionFilter = e.target.value;
+      const newFilter = e.target.value;
+      const filterChanged = newFilter !== currentCollectionFilter;
+      currentCollectionFilter = newFilter;
       filterAndDisplayPoems();
+
+      // Track filter change
+      if (filterChanged && typeof gtag !== "undefined") {
+        gtag("event", "filter", {
+          filter_type: "collection",
+          filter_value: newFilter || "all",
+          page_location: window.location.href,
+        });
+      }
     });
   }
 
   // Tag filter
   if (tagFilter) {
     tagFilter.addEventListener("change", (e) => {
-      currentTagFilter = e.target.value;
+      const newFilter = e.target.value;
+      const filterChanged = newFilter !== currentTagFilter;
+      currentTagFilter = newFilter;
       filterAndDisplayPoems();
+
+      // Track filter change
+      if (filterChanged && typeof gtag !== "undefined") {
+        gtag("event", "filter", {
+          filter_type: "tag",
+          filter_value: newFilter || "all",
+          page_location: window.location.href,
+        });
+      }
     });
   }
 
@@ -579,8 +630,14 @@ function setupSocialBottomBar() {
   document.querySelectorAll(".social-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       const platform = e.currentTarget.id.replace("-link", "");
-      console.log(`Social link clicked: ${platform}`);
-      // Add analytics tracking here if needed
+      // Track social media clicks
+      if (typeof gtag !== "undefined") {
+        gtag("event", "social_click", {
+          platform: platform,
+          page_location: window.location.href,
+          source: "catalogue_page",
+        });
+      }
     });
   });
 }

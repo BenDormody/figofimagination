@@ -10,7 +10,12 @@ function initializeAboutPage() {
     setupArtistRecommendations();
 
     // Track page view
-    trackPageView();
+    if (typeof gtag !== "undefined") {
+      gtag("event", "page_view", {
+        page_title: "About - Fig of Imagination",
+        page_location: window.location.href,
+      });
+    }
   } catch (error) {
     console.error("Error initializing about page:", error);
   }
@@ -103,8 +108,14 @@ function setupSocialBottomBar() {
   document.querySelectorAll(".social-link").forEach((link) => {
     link.addEventListener("click", (e) => {
       const platform = e.currentTarget.id.replace("-link", "");
-      console.log(`Social link clicked: ${platform}`);
-      // Add analytics tracking here if needed
+      // Track social media clicks
+      if (typeof gtag !== "undefined") {
+        gtag("event", "social_click", {
+          platform: platform,
+          page_location: window.location.href,
+          source: "about_page",
+        });
+      }
     });
   });
 }

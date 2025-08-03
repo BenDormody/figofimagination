@@ -4,6 +4,54 @@
 let poemsData = null;
 let collectionsData = null;
 
+// Google Analytics tracking functions
+function trackPageView(pageTitle = null) {
+  if (typeof gtag !== "undefined") {
+    gtag("event", "page_view", {
+      page_title: pageTitle || document.title,
+      page_location: window.location.href,
+    });
+  }
+}
+
+function trackCustomEvent(eventName, parameters = {}) {
+  if (typeof gtag !== "undefined") {
+    gtag("event", eventName, parameters);
+  }
+}
+
+function trackPoemClick(poemId, poemTitle, collection = null) {
+  trackCustomEvent("poem_click", {
+    poem_id: poemId,
+    poem_title: poemTitle,
+    collection: collection,
+    page_location: window.location.href,
+  });
+}
+
+function trackSocialClick(platform) {
+  trackCustomEvent("social_click", {
+    platform: platform,
+    page_location: window.location.href,
+  });
+}
+
+function trackSearch(searchTerm, resultsCount) {
+  trackCustomEvent("search", {
+    search_term: searchTerm,
+    results_count: resultsCount,
+    page_location: window.location.href,
+  });
+}
+
+function trackFilter(filterType, filterValue) {
+  trackCustomEvent("filter", {
+    filter_type: filterType,
+    filter_value: filterValue,
+    page_location: window.location.href,
+  });
+}
+
 // Data loading and management
 async function loadPoems() {
   try {
@@ -92,6 +140,15 @@ function createPoemCard(poem, index) {
 
   // Add click handler
   card.addEventListener("click", () => {
+    // Track poem card click
+    if (typeof gtag !== "undefined") {
+      gtag("event", "poem_card_click", {
+        poem_id: poem.id,
+        poem_title: title,
+        collection: poem.collection || null,
+        page_location: window.location.href,
+      });
+    }
     navigateToPoem(poem.id);
   });
 
